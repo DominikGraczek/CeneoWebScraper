@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wykresy</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
+</head>
+<body>
+
+  <div class="container mt-4">
+    <h2>Wykresy</h2>
+
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="pieChart"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="barChart"></canvas>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <a href="strona-produktu.html" class="btn btn-secondary">Powrót do strony produktu</a>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Dane do wykresów
+    const pieData = {
+      labels: ['Za', 'Przeciw', 'Nie mam zdania'],
+      datasets: [{
+        data: [30, 40, 30],
+        backgroundColor: ['#28a745', '#dc3545', '#ffc107']
+      }]
+    };
+
+    const barData = {
+      labels: ['1 gwiazdka', '2 gwiazdki', '3 gwiazdki', '4 gwiazdki', '5 gwiazdek'],
+      datasets: [{
+        label: 'Liczba opinii',
+        data: [10, 20, 30, 40, 50],
+        backgroundColor: '#007bff'
+      }]
+    };
+
+    // Inicjalizacja wykresów
+    new Chart(document.getElementById('pieChart'), {
+      type: 'pie',
+      data: pieData,
+    });
+
+    new Chart(document.getElementById('barChart'), {
+      type: 'bar',
+      data: barData,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            precision: 0
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
