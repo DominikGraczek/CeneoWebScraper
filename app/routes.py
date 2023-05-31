@@ -1,7 +1,7 @@
 from app import app
 
 @app.route('/')
-@app.route('/index')
+@app.route('/home')
 def index():
     # return "Hello, Dominik Graczek!"
     return render_template("home.html")
@@ -21,9 +21,6 @@ def lista_produktow():
 @app.route('/o-autorze')
 def author():
     return render_template("o-autorze.html")
-@app.route('/ekstrakcja-opini')
-def ekstrakcja():
-    return render_template("ekstrakcja-opini.html")
 @app.route('/produkt')
 def produkt():
     return render_template("produkt.html")
