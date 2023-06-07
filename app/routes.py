@@ -1,14 +1,11 @@
 from app import app
 
+from flask import render_template
+
 @app.route('/')
 @app.route('/home')
 def index():
-    # return "Hello, Dominik Graczek!"
     return render_template("home.html")
-# @app.route('/name/',defaults={'name':"Anonim"})
-# @app.route('/name/<name>')
-# def name(name = None):
-#     return f"Hello, {name}!"
 
 @app.route('/ekstrakcja-opini')
 def ekstrakcja():
