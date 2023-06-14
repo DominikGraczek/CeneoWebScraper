@@ -4,10 +4,10 @@
   <div class="container mt-4">
     <h2>Formularz produktu</h2>
 
-    <form>
+    <form method="POST" action="{{url_for('ekstrakcja')}}">
       <div class="mb-3">
         <label for="productID" class="form-label">ID produktu</label>
-        <input type="text" class="form-control" id="productID" placeholder="Wprowadź ID produktu">
+        <input type="text" class="form-control" id="productID" placeholder="Wprowadź ID produktu" name="product_id">
       </div>
       <button type="submit" class="btn btn-primary">Pobierz opinie</button>
     </form>
